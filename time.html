@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html> 
+
+<head> 
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      .time{
+        color: brown;
+        font-size: 200%;
+        width: 10%;
+      }
+      b{
+        font-size: 200%;
+      }
+      p{
+        font-size: 220%;
+      }
+    </style>
+</head> 
+
+<body> 
+
+ <form action="somepage.asp">  
+
+  <input type="button" value="计时开始" name="btnStart" />   <br>
+
+  <P>Time passed:</P>
+
+  <input type="text" value="0" name="txt1" class="time"/><b>s</b>
+
+ </form> 
+
+</body> 
+
+</html> 
+
+<script language="JavaScript" type="text/javascript"> 
+
+
+var txt=document.forms[0].elements["txt1"]; 
+
+var btnStart=document.forms[0].elements["btnStart"]; 
+
+var id; 
+
+var seed=0; 
+
+btnStart.onclick=function(){ 
+
+  if(this.value=="计时开始"){ 
+
+    this.value="计时暂停";  
+
+    id=window.setInterval(tip,1000); 
+
+  }else{ 
+
+    this.value="计时开始"; 
+
+    window.clearInterval(id); 
+
+  } 
+
+} 
+
+
+function tip(){ 
+
+  seed++; 
+
+  txt.value=seed/1; 
+
+} 
+
+</script>
